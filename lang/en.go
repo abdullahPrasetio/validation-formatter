@@ -1,3 +1,11 @@
+/********************************************************************************
+* Temancode Lang Package                                            			*
+*                                                                               *
+* Version: 1.0.0                                                                *
+* Date:    2022-12-28                                                           *
+* Author:  Waluyo Ade Prasetio                                                  *
+********************************************************************************/
+
 package lang
 
 var LangEN = map[string]string{
@@ -10,5 +18,5 @@ var LangEN = map[string]string{
 	"required_without_all": "The :attribute field is required when none of :values are present.",
 	"numeric":              "The :attribute must be a number.",
 	"min":                  "The :attribute must be at least :param characters.",
-	"date":                 "The :attribute is not a valid date.",
+	"date":                 "The :attribute is not a valid date. the valid date is :values",
 }

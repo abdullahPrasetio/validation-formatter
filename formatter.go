@@ -1,4 +1,12 @@
-package laravel_resp
+/********************************************************************************
+* Temancode Formatter Validation Package                                        *
+*                                                                               *
+* Version: 1.0.0                                                                *
+* Date:    2022-12-28                                                           *
+* Author:  Waluyo Ade Prasetio                                                  *
+********************************************************************************/
+
+package formatter
 
 import (
 	"errors"

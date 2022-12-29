@@ -1,3 +1,11 @@
+/********************************************************************************
+* Temancode Custom Validation Date Package                                      *
+*                                                                               *
+* Version: 1.0.0                                                                *
+* Date:    2022-12-28                                                           *
+* Author:  Waluyo Ade Prasetio                                                  *
+********************************************************************************/
+
 package date
 
 var Mapping = map[string]string{
