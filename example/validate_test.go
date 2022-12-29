@@ -29,8 +29,9 @@ type Address struct {
 var validateFormatter formatter.ValidateFormatter
 
 func init() {
-	lang.AddLang("ED", ED)
-	newLanguage := lang.NewLanguage("ED").ChangeMessage("required", "Halo :attribute").ChangeMessage("min", ":attribute min berisi :values ya")
+	// lang.AddLang("EN", EN)
+	// newLanguage := lang.NewLanguage("EN").ChangeMessage("required", "Halo :attribute").ChangeMessage("min", ":attribute min berisi :values ya")
+	newLanguage := lang.NewLanguage("EN")
 	// newLanguage.ChangeMessage("date", ":attribute bukan sesuatu1 yang valid. format yang valid adalah :values")
 	validateFormatter = formatter.NewValidateFormatter(newLanguage, "CamelCase")
 	// lang.ChangeMessage("date", ":attribute bukan sesuatu yang valid. format yang valid adalah :values")
@@ -63,5 +64,24 @@ func validateStruct() {
 	if err != nil {
 		fmt.Println(validateFormatter.GetErrorMsgValidation(err))
 		// fmt.Println(err)
+	}
+}
+
+type TestStruct struct {
+	Contains string `validate:"contains=ade"`
+}
+
+func TestValidateContains(t *testing.T) {
+	validate := formatter.Validate
+
+	address := &TestStruct{
+		Contains: "Eavesdown Docks ade",
+	}
+
+	// returns nil or ValidationErrors ( []FieldError )
+	err := validate.Struct(address)
+	if err != nil {
+		// fmt.Println(validateFormatter.GetErrorMsgValidation(err))
+		fmt.Println(err)
 	}
 }
