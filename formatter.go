@@ -71,6 +71,7 @@ func getErrorMsg(fe validator.FieldError, language lang.Language) string {
 func messageReplacer(message string, fe validator.FieldError, addSpace addspace) (newMessage string) {
 	newMessage = strings.Replace(message, ":attribute", addSpace(fe.Field()), 1)
 	newMessage = strings.Replace(newMessage, ":values", addSpace(fe.Param()), 1)
+	newMessage = strings.Replace(newMessage, ":param", addSpace(fe.Param()), 1)
 	getParamValue := strings.Split(fe.Param(), " ")
 	var value string
 	var param string

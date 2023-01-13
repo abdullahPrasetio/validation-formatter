@@ -31,7 +31,7 @@ var validateFormatter formatter.ValidateFormatter
 func init() {
 	// lang.AddLang("EN", EN)
 	// newLanguage := lang.NewLanguage("EN").ChangeMessage("required", "Halo :attribute").ChangeMessage("min", ":attribute min berisi :values ya")
-	newLanguage := lang.NewLanguage("EN")
+	newLanguage := lang.NewLanguage("ID")
 	// newLanguage.ChangeMessage("date", ":attribute bukan sesuatu1 yang valid. format yang valid adalah :values")
 	validateFormatter = formatter.NewValidateFormatter(newLanguage, "CamelCase")
 	// lang.ChangeMessage("date", ":attribute bukan sesuatu yang valid. format yang valid adalah :values")
@@ -71,6 +71,10 @@ type TestStruct struct {
 	Contains string `validate:"contains=ade"`
 }
 
+type TestStructMax struct {
+	Max string `validate:"max=9"`
+}
+
 func TestValidateContains(t *testing.T) {
 	validate := formatter.Validate
 
@@ -80,6 +84,15 @@ func TestValidateContains(t *testing.T) {
 
 	// returns nil or ValidationErrors ( []FieldError )
 	err := validate.Struct(address)
+	if err != nil {
+		// fmt.Println(validateFormatter.GetErrorMsgValidation(err))
+		fmt.Println(err)
+	}
+
+	max := &TestStructMax{
+		Max: "askjaskjaskjdkjas",
+	}
+	err = validate.Struct(max)
 	if err != nil {
 		// fmt.Println(validateFormatter.GetErrorMsgValidation(err))
 		fmt.Println(err)

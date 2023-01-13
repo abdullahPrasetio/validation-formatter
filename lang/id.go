@@ -27,7 +27,7 @@ var LangID = map[string]string{
 	"lte":                  ":attribute harus bernilai kurang dari atau sama dengan :value.",
 	"len":                  "The :attribute must not be greater than :param characters.",
 	"mac":                  ":attribute harus berupa MAC address yang valid.",
-	"max":                  ":attribute maskimal bernilai :param.",
+	"max":                  ":attribute maksimal bernilai :param.",
 	"min":                  ":attribute minimal berisi :values karakter.",
 	"numeric":              ":attribute harus berupa angka.",
 	"required":             ":attribute wajib diisi.",
