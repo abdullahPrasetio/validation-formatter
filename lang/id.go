@@ -25,7 +25,7 @@ var LangID = map[string]string{
 	"json":                 ":attribute harus berupa JSON string yang valid.",
 	"lt":                   ":attribute harus bernilai kurang dari :value.",
 	"lte":                  ":attribute harus bernilai kurang dari atau sama dengan :value.",
-	"len":                  "The :attribute must not be greater than :param characters.",
+	"len":                  ":attribute harus berjumlah :param characters.",
 	"mac":                  ":attribute harus berupa MAC address yang valid.",
 	"max":                  ":attribute maksimal bernilai :param.",
 	"min":                  ":attribute minimal berisi :values karakter.",
